@@ -20,4 +20,11 @@ public class PlayerTest {
         player.giveCard(card);
         assertEquals(4.4, player.getScore(), 0.01);
     }
+
+    @Test
+    public void playerCardsAreDiscarded(){
+        player.giveCard(card);
+        player.discardCard();
+        assertEquals(0, player.countNumberOfCards());
+    }
 }

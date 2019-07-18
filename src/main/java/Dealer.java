@@ -4,10 +4,12 @@ public class Dealer {
 
     private Deck deck;
     private ArrayList<Player> players;
+    private Deck discard;
 
     public Dealer() {
         this.deck = new Deck();
         this.players = new ArrayList<Player>();
+        this.discard = new Deck();
     }
 
     public Deck getDeck() {
@@ -40,5 +42,9 @@ public class Dealer {
             }
         }
         return winner;
+    }
+
+    public void addToDiscard(Player player){
+        player.discardCard();
     }
 }

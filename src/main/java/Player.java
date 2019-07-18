@@ -35,4 +35,10 @@ public class Player {
         }
         return score;
     }
+
+    public Card discardCard() {
+        Card card = this.hand.get(0);
+        this.hand.remove(0);
+        return card;
+    }
 }

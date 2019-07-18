@@ -46,4 +46,14 @@ public class DealerTest {
         assertEquals(playerOne, dealer.getWinner());
     }
 
+    @Test
+    public void playerDiscardsCard(){
+        deck.populate();
+        dealer.addPlayer(playerOne);
+        dealer.dealCards(deck);
+        dealer.addToDiscard(playerOne);
+        assertEquals(0, playerOne.countNumberOfCards());
+
+    }
+
 }
