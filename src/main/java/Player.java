@@ -22,4 +22,17 @@ public class Player {
     public void giveCard(Card card) {
         this.hand.add(card);
     }
+
+    public int countNumberOfCards() {
+        return this.hand.size();
+    }
+
+    public double getScore() {
+        double score = 0;
+        for (Card card: this.hand){
+            score += card.getRank().getScore();
+            score += card.getSuit().getScore();
+        }
+        return score;
+    }
 }
