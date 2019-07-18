@@ -7,11 +7,13 @@ public class DeckTest {
 
     Deck deck;
     Card cardOne;
+    Player playerOne;
 
     @Before
     public void setup(){
         cardOne = new Card(CardRank.QUEEN, CardSuit.DIAMONDS);
         deck = new Deck();
+        playerOne = new Player(1);
     }
 
 
@@ -33,6 +35,13 @@ public class DeckTest {
 //        deck.shuffle();
         assertEquals(CardRank.ACE, deck.getFirstCardRank());
         assertEquals(CardSuit.CLUBS, deck.getFirstCardSuit());
+    }
+
+    @Test
+    public void canDealCardFromDeck(){
+        deck.populate();
+        deck.dealOneCard(playerOne);
+        assertEquals(51, deck.countNumberOfCards());
     }
 
 
